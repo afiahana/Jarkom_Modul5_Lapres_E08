@@ -76,5 +76,14 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 08:01 --timestop 16:59 -
 ## 7
 - Pada UML Surabaya, jalankan
 ```
-
+iptables -A FORWARD -d 10.151.71.72/29 -i eth0 -p tcp --dport 22 -j LOG --log-prefix "FORWARD TCP-DROPPED: "
+iptables -A FORWARD -d 10.151.71.72/29 -i eth0 -p tcp --dport 22 -j DROP
 ```
+- Pada UML Malang dan UML Mojokerto, jalankan
+```
+iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j LOG --log-prefix "Connection Limit --> DROPPED : "
+iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP
+```
+- Hasil akhir
+- ![foto 1](img5/7A.jpg)
+- ![foto 1](img5/7B.jpg)
