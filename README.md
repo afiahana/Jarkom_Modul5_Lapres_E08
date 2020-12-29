@@ -58,7 +58,7 @@ iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 07:00 --timestop 17:00 -
 iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 17:01 --timestop 00:00 --weekdays Mon,Tue,Wed,Thu,Fri -j DROP
 iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 00:01 --timestop 06:59 --weekdays Mon,Tue,Wed,Thu,Fri -j DROP
 ```
-- 
+- Pada UML Malang, jalankan ```date --set="2020/12/26 06:00"```
 - ![foto 1](img5/4.jpg)
 
 ## 5
@@ -68,5 +68,13 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 17:00 --timestop 00:00 -
 iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 00:00 --timestop 08:00 -j ACCEPT
 iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 08:01 --timestop 16:59 -j DROP
 ```
-- 
+- Pada UML Malang, jalankan ```date --set="2020/12/27 09:00"```
 - ![foto 1](img5/5.jpg)
+
+## 6
+
+## 7
+- Pada UML Surabaya, jalankan
+```
+
+```
