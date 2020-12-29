@@ -49,3 +49,24 @@ Melakukan Routing pada UML Surabaya
 - Melakukan ping ke IP MALANG atau IP MOJOKERTO di 4 UML
 - Dinyatakan berhasil jika di UML ke 4 tidak bisa melakukan ping
 - ![foto 1](img5/3.jpg)
+
+## 4
+- Pada UML Malang, jalankan
+```
+iptables -A INPUT -s 192.168.2.0/24 -m time --weekdays Sat,Sun -j DROP
+iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 07:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT 
+iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 17:01 --timestop 00:00 --weekdays Mon,Tue,Wed,Thu,Fri -j DROP
+iptables -A INPUT -s 192.168.2.0/24 -m time --timestart 00:01 --timestop 06:59 --weekdays Mon,Tue,Wed,Thu,Fri -j DROP
+```
+- 
+- ![foto 1](img5/4.jpg)
+
+## 5
+- Pada UML Malang, jalankan
+```
+iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 17:00 --timestop 00:00 -j ACCEPT 
+iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 00:00 --timestop 08:00 -j ACCEPT
+iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 08:01 --timestop 16:59 -j DROP
+```
+- 
+- ![foto 1](img5/5.jpg)
