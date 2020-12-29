@@ -46,7 +46,7 @@ Melakukan Routing pada UML Surabaya
 
 ## 3
 - Pada UML Mojokerto dan UML Malang, jalankan ```iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP```
-- Melakukan ping ke IP MALANG atau IP MOJOKERTO di 4 UML
+- Melakukan ping ke IP MALANG atau IP MOJOKERTO di 5 UML
 - Dinyatakan berhasil jika di UML ke 4 tidak bisa melakukan ping
 - ![foto 1](img5/3.jpg)
 
