@@ -72,6 +72,19 @@ iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 08:01 --timestop 16:59 -
 - ![foto 1](img5/5.jpg)
 
 ## 6
+- Pada UML Surabaya, jalankan
+```
+iptables -t nat -A PREROUTING -p tcp -d 10.151.71.74 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.0.11:80 #Probolinggo
+iptables -t nat -A PREROUTING -p tcp -d 10.151.71.74 -j DNAT --to-destination 192.168.0.10:80 #Madiun
+iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.11 --dport 80 -j SNAT --to-source 10.151.71.74:80 #Probolinggo
+iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.10 --dport 80 -j SNAT --to-source 10.151.71.74:80 #Madiun
+```
+- Install netcat pada UML Malang, UML Probolinggo, UML Madiun, UML Surabaya, dan UML Gresik (Client) ```apt-get install netcat```
+- Pada UML Madiun, jalankan ```nc -l -p 80```
+- Pada UML Probolinggo, jalankan ```nc -l -p 80```
+- Pada UML Client (Gresik), jalankan ```nc ipMalang 80```
+- Ketik bebas apapun di UML Gresik nanti muncul di UML Madiun/ Probolinggo
+- ![foto 1](img5/6.jpg)
 
 ## 7
 - Pada UML Surabaya, jalankan
