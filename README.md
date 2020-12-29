@@ -99,8 +99,8 @@ iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j
 ```
 - Cara testing
 ```
-di UML --> nc -l -p <nomor_port>
-di WSL --> nc <ip_malang/mojo> <nomor_port>
+Pada UML Surabaya, sama seperti menjalankan testing nomor 2
+Pada UML Malang dan Mojokerto, sama seperti menjalankan testing nomor 3
 ```
 - Hasil akhir
 - ![foto 1](img5/7A.jpg)
